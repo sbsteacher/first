@@ -18,7 +18,6 @@ public class CarTest4 {
         Car car2 = new Car("티코");
         Bus bus = new Bus("802번");
 
-
         callDrive(ferrari);
         callDrive(sc);
         callDrive(car2);
