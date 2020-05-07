@@ -47,12 +47,12 @@ public class CustomArrayList {
         arr = temp;
     }
 
-    public int get(int idx) {
-        return arr[idx];
+    public int size() {
+        return arr.length;
     }
 
-    public void printLength() {
-        System.out.println(arr.length);
+    public int get(int idx) {
+        return arr[idx];
     }
 
     public void printValues() {

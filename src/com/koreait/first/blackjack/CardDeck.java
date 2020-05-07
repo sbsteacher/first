@@ -39,4 +39,11 @@ public class CardDeck {
             }
         }
     }
+
+    public Card draw() {
+        int rIdx = (int)(Math.random() * cardList.size());
+        Card temp = cardList.get(rIdx);
+        cardList.remove(rIdx);
+        return temp;
+    }
 }
