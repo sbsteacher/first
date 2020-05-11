@@ -1,5 +1,4 @@
 package com.koreait.first.numberbaseball;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -12,7 +11,6 @@ public class BaseBallGame {
        gameArr = new int[gameNo];
        myArr = new int[gameNo];
     }
-
     public void gameStart() {
         setRandomValues();
         tryGame();
@@ -23,11 +21,23 @@ public class BaseBallGame {
         do {
             System.out.printf("값 %d개를 입력해주세요. (1~9사이 값): ", myArr.length);
             for (int i = 0; i < myArr.length; i++) {
-                myArr[i] = scan.nextInt();
+                myArr[i] = stringToInt(scan.next()); //"4" > 4, "2c11" > 0
+
+                if(myArr[i] == 0) {
+                    System.out.println("다시 입력해 주세요");
+                    i--;
+                }
             }
+            System.out.println(Arrays.toString(myArr));
         }while(isGameContinue());
+    }
 
-
+    private int stringToInt(String val) {
+        int result = 0;
+        try {
+            result = Integer.parseInt(val);
+        } catch(Exception e) {}
+        return result;
     }
 
     private boolean isGameContinue() {
@@ -51,30 +61,6 @@ public class BaseBallGame {
 
         return strike < gameArr.length;
     }
-
-    /*
-    public void gameStart() {
-        setRandomValues();
-        do {
-            for(int i=1; i<=gameArr.length; i++) {
-                System.out.printf("숫자%d입력 : ", i);
-                myArr[i] = scan.nextInt();
-            }
-        }while(isContinueChecked());
-    }
-
-    private boolean isContinueChecked() {
-        boolean result = true;
-
-        for(int i=0; i<gameArr.length; i++) {
-            for(int z=0; z<myArr.length; z++) {
-
-            }
-        }
-
-        return result;
-    }
-*/
 
     private void setRandomValues() {
         for(int i=0; i<gameArr.length; i++) {
