@@ -1,6 +1,7 @@
 package com.koreait.first.obj4;
 
 public class Test {
+
     public static void main(String[] args) {
         Calcable calImple_1 = new Calcable() {
           @Override
@@ -11,10 +12,10 @@ public class Test {
 
         Calc obj1 = new Calc();
         System.out.println("---- 1 ----");
-        obj1.calcSum(calImple_1);
+        obj1.calcProc(calImple_1);
 
         System.out.println("---- 2 ----");
-        obj1.calcSum(new Calcable() {
+        obj1.calcProc(new Calcable() {
             @Override
             public int calc(int n1, int n2) {
                 return n1 + n2;
@@ -26,7 +27,7 @@ public class Test {
 class Calc {
     int a = 10, b = 2;
 
-    public void calcSum(Calcable c) {
+    public void calcProc(Calcable c) {
         int result = c.calc(a, b);
         System.out.println("result : " + result);
     }
