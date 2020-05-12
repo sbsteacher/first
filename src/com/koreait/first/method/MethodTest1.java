@@ -10,8 +10,7 @@ public class MethodTest1 {
 
         //printGugudanOrder(sDan, eDan);
 
-        printGugudanOrder2_ver2(sDan, eDan);
-
+        //printGugudanOrder2_ver2(sDan, eDan);
     }
 
     public static void printGugudanOrder2_ver2(int sDan, int eDan) {
