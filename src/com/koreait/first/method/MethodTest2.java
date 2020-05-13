@@ -6,7 +6,9 @@ public class MethodTest2 {
         //star.printStar(5);
         //star.printSqure(5);
         //star.printTriangle(5);
-        star.printTriangleReverse(5);
+        //star.printTriangleReverse(5);
+        String str = star.returnTriangleReverse(4);
+        System.out.println(str);
     }
 }
 
@@ -34,5 +36,16 @@ class Star {
             System.out.print("*");
         }
         System.out.println();
+    }
+
+    public String returnTriangleReverse(int num) {
+        String star = "";
+        for(int z=num; z > 0; z--) {
+            for(int i=0; i<z; i++) {
+                star += "*";
+            }
+            star += "\n";
+        }
+        return star;
     }
 }
